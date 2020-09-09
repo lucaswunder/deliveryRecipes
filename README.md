@@ -12,7 +12,7 @@
 | Logs               | Morgan      |
 
 
-### Installing and running the app with PM2
+### Installing app
 
 $ npm install
 
