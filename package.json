@@ -5,7 +5,8 @@
   "repository": "https://github.com/lucaswunder/deliveryRecipes.git",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon"
+    "dev": "nodemon",
+    "start": "node src/index.js"
   },
   "dependencies": {
     "@hapi/joi": "15.1.1",
