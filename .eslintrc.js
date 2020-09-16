@@ -17,11 +17,16 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
-    "prettier/prettier": "error",
+    // "prettier/prettier": "error",
     "class-methods-use-this": "off",
     "no-param-reassign":"off",
     "camelcase":"off",
     "no-unused-vars":["error",{"argsIgnorePattern": "next" }],
-    "no-console":false
-  },
+    "object-curly-spacing":[
+      1,
+      "always"
+    ],
+    "one-var": "off",
+    "no-undef": "off"
+  }
 };
