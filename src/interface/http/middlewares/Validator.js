@@ -5,7 +5,7 @@ const wrapperError = (error) => {
         message,
         path
     }) => ({
-        message: message,
+        message,
         path: path.join('.')
     }));
 };

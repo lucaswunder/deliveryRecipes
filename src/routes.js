@@ -2,13 +2,13 @@ const express = require('express');
 const handle = require('express-async-handler');
 
 const routes = express.Router()
-const container = require('./App/container');
+const container = require('./app/container');
 
 /** Middlewares */
-const validatorMiddleware = require('./App/Middlewares/Validator');
+const validatorMiddleware = require('./interface/http/middlewares/Validator');
 
 /** Schemas */
-const recipeSchema = require('./App/Schemas/RecipeSchema');
+const recipeSchema = require('./interface/http/schemas/RecipeSchema');
 
 /** Controllers */
 const recipeController = container.resolve('recipeController');

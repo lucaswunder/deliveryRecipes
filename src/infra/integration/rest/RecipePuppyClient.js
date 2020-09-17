@@ -11,9 +11,9 @@ module.exports = (ctx) => ({
 
       return response.data.results;
     } catch (error) {
-        throw {
-          error: 'Recipe Puppy external service is unvailable'
-        }
+        const err = new Error();
+        err.message = 'Recipe Puppy external service is unvailable';
+        throw err;
       }
   }
 })

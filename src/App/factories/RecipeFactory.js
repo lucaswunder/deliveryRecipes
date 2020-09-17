@@ -1,5 +1,5 @@
 const mapFields = (recipes) => {
-  let newRecipes=[];
+  const newRecipes=[];
   recipes.forEach(recipe => {
         newRecipes.push({
           title: recipe.title,
@@ -11,9 +11,9 @@ const mapFields = (recipes) => {
     return newRecipes;
 }
 
-module.exports = (ctx) => ({
+module.exports = () => ({
   buildPayload: ({ keywords, recipes }) => {
-    let payload = {
+    const payload = {
       keywords: [keywords]
     }
 

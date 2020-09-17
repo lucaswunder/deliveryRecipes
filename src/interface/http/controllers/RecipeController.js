@@ -2,6 +2,6 @@ module.exports = (ctx) => ({
   index: async (req, res) => {
     const { i } = req.query;
 
-    res.json(await ctx.recipesService.search(i));
+    return res.json(await ctx.recipesService.search(i));
   }
 })
