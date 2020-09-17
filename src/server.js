@@ -1,9 +1,10 @@
 require('dotenv').config();
 
 const express = require('express');
-var fs = require('fs')
-var morgan = require('morgan')
-var path = require('path')
+const fs = require('fs');
+const morgan = require('morgan');
+const path = require('path');
+const routes = require('./routes');
 
 class App {
   constructor () {
@@ -21,19 +22,19 @@ class App {
   }
 
   logger () {
-    var accessLogStream = fs.createWriteStream(path.join(process.env.SERVER_LOGS_PATH, 'access.log'), { flags: 'a' })
+    const accessLogStream = fs.createWriteStream(path.join(process.env.SERVER_LOGS_PATH, 'access.log'), { flags: 'a' })
     this.express.use(morgan('combined', { stream: accessLogStream }));
   }
 
   routes () {
-    this.express.use(require('./routes'));
+    this.express.use(routes);
   }
 
   exception () {
     this.express.use(async (err, req, res, next) => {
       let title = 'Internal Server Error';
 
-      if(err.name == 'Validation') title = "Validation";
+      if(err.name === 'Validation') title = "Validation";
       return res.status(err.status || 500).json({ error: title, details:err })
     })
   }

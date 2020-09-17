@@ -1,4 +1,4 @@
-# Recipes 
+# Recipes Puppy Api
 
 ## Documentation
 

@@ -15,9 +15,10 @@ module.exports = (ctx) => ({
 
       return response.data;
     } catch (error) {
-      throw {
-        error: 'Giphy external service is unavailable'
+        const err = new Error();
+        err.message = 'Giphy external service is unavailable';
+        throw err;
       }
     }
   }
-})
+)
