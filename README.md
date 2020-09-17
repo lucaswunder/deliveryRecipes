@@ -1,4 +1,4 @@
-# Recipes Puppy Api for DeliveryMuch
+# Recipes Puppy Api
 
 ## Documentation
 
